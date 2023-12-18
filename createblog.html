@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Your Blog</title>
+  <style>
+    /* Add your CSS styling here */
+  </style>
+</head>
+<body>
+
+    <div id="blogContainer"></div>
+
+<div class="container">
+  <!-- Existing blog content goes here -->
+
+  <!-- Form to create new blog post -->
+  <h2>Create a New Blog Post</h2>
+    hi
+  <form id="blogForm">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required>
+
+    <label for="content">Content:</label>
+    <textarea id="content" name="content" required></textarea>
+
+    <button type="button" onclick="createBlogPost()">Create Post</button>
+  </form>
+</div>
+
+
+
+<script>
+  function createBlogPost() {
+    // Get user input from the form
+    var title = document.getElementById('title').value;
+    var content = document.getElementById('content').value;
+
+    // Create a new blog post element
+    var postElement = document.createElement('div');
+    postElement.className = 'blog-post';
+
+    // Populate the new blog post element with user input
+    postElement.innerHTML = '<h3>' + title + '</h3><p>' + content + '</p>';
+
+    // Prepend the new blog post to the container
+    document.body.prepend(postElement);
+
+    // Clear the form for the next post
+    document.getElementById('title').value = '';
+    document.getElementById('content').value = '';
+  }
+</script>
+
+</body>
+</html>
